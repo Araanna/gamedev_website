@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Dev Web</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Flowbite (for carousel functionality) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+</head>
+
+<body class="bg-black text-gray-900 flex flex-col min-h-screen">
+  <!-- Navbar -->
+  <header>
+    <nav class="fixed z-[9999] backdrop-blur-lg bg-white/20 shadow-lg p-4 mx-auto my-2 rounded-lg w-[90%] sm:w-[85%] md:w-[80%] lg:w-[92rem] flex flex-col md:flex-row md:items-center md:justify-start transform translate-x-6 translate-y-2">
+      <span class="text-slate-50 font-semibold text-lg">GAME EXPO</span>
+    </nav>
+  </header>
+  
+
+  <!-- Main Content -->
+  <main class="container mx-auto p-6 mt-16 flex-grow">
+    <section id="home" class="bg-white shadow-md rounded-lg">
+      <!-- Carousel -->
+      <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="images/slide-one.png" class="absolute w-full h-full object-cover" alt="Carousel Image 1">
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="images/Into the Light.png" class="absolute w-full h-full object-cover" alt="Carousel Image 2">
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="images/LastDefender.png" class="absolute w-full h-full object-cover" alt="Carousel Image 3">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product List -->
+    <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-6"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="backdrop-blur-lg bg-slate-50/20 shadow-lg text-white text-right p-4 rounded-t-lg text-right">
+    <p>&copy; 2025 Game Dev Web. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const games = [
+      { name: "Apokz", img: "images/Apokz.webp" },
+      { name: "Chronicles of Macahambus", img: "images/Chronicles of Macahambus.png" },
+      { name: "Gravity Shift", img: "images/Gravity Shift.png" },
+      { name: "Into the Light", img: "images/Into the Light.png" },
+      { name: "Last Defender", img: "images/LastDefender.png" },
+      { name: "Outbreak", img: "images/Outbreak.png" },
+      { name: "Queen Street Slayer", img: "images/Queen Street Slayer.jpg" },
+      { name: "SEROT", img: "images/SEROT.jpg" },
+      { name: "Shattered Department", img: "images/Shattered Department.png" },
+      { name: "The Adventure of Bobord", img: "images/The Adventure of Bobord.webp" },
+      { name: "The Further", img: "images/The Further.png" },
+      { name: "The Locked: A Journey Back Home", img: "images/The Locked.png" },
+      { name: "The Phinma Chronicles", img: "images/The Phinma Chronicles.webp" },
+      { name: "Ticket Rush", img: "images/Ticket Rush.jpg" },
+      { name: "Urban Runner", img: "images/Urban Runner.png" }
+    ];
+
+    const container = document.getElementById("product-container");
+    games.forEach(game => {
+      const gameCard = `
+        <div class="w-full max-w-sm backdrop-blur-lg bg-slate-900/40 shadow-lg border border-gray-900 rounded-lg shadow-sm transition duration-300 hover:scale-105 hover:shadow-lg">
+          <img class="rounded-t-lg w-full h-64" src="${game.img}" alt="${game.name}" />
+          <div class="text-center">
+            <h1 class="p-6 text-md font-semibold tracking-tight text-gray-100">${game.name}</h1>
+          </div>
+        </div>
+      `;
+      container.innerHTML += gameCard;
+    });
+  </script>
+</body>
+</html>
