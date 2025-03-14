@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,73 +8,164 @@
 </head>
 <body class="bg-black text-white flex flex-col items-center min-h-screen p-6">
   
-  <div class="parent grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-1 p-2 w-full max-w-6xl">
+  <div class="parent grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-3 p-2 w-full max-w-6xl">
       <!-- Game Card -->
       <div class="col-span-1 md:col-span-2 row-span-2 p-2 bg-gray-800 rounded-lg shadow-md">  
         <div class="flex flex-wrap justify-center gap-6 p-4">
           <img id="game-image" class="w-[530px] h-[690px] rounded-md" alt="Game Image">
-          <div class="content  text-center">
+          <div class="content text-center">
             <h1 id="game-title" class="text-xl font-bold text-blue-400"></h1>
             <p id="game-developer" class="text-sm text-gray-300"></p>
             <p class="desc mt-1 text-gray-400 text-xs">
               This game was created by <span id="developer-name" class="font-semibold text-blue-300"></span> & 
-              <span id="co-developer-name" class="font-semibold text-blue-300"></span>. More details about the development and the team behind it will be added here.
+              <span id="co-developer-name" class="font-semibold text-blue-300"></span>. <span id="game-description" class="text-gray-400 text-sm mt-2"></span>
+
             </p>
           </div>
         </div>
       </div>
       
-  
       <!-- Developer Profile -->
-      <div class="row-span-1 md:col-span-2 col-span-1 p-8 bg-gray-900 rounded-xl shadow-md flex-col items-center gap-4">
-        <div  class="m-5">
-          <div class="profile-pic w-24 h-24 rounded-full overflow-hidden border-2 border-blue-400">
-              <img id="developer-pic" src="#" alt="Developer Picture" class="w-full h-full object-cover">
+      <div class="row-span-1 md:col-span-2 col-span-1 p-8 bg-gray-900 rounded-xl shadow-md flex flex-col items-start gap-4">
+        <!-- Developer -->
+        <div class="flex flex-row items-start">
+          <div class="profile-pic w-44 h-44 rounded-full overflow-hidden border-2 border-blue-400">
+            <img id="developer-pic" src="images/Profiles/default.jpg" alt="Developer Picture" class="w-full h-full object-cover">
           </div>
-          <div>
-              <h2 id="developer-profile-name" class="text-xl font-semibold text-white"></h2>     
-              <p class="text-sm text-gray-400">Lead Developer</p>
+          <div class="ml-5">
+            <h2 id="developer-name-profile" class="text-xl font-semibold text-white">Developer Name</h2>
+            <p class="text-sm text-gray-400">Lead Developer</p>
           </div>
-        </div>    
+        </div>
 
-        <div  class="m-5">
-          <div class="profile-pic w-24 h-24 rounded-full overflow-hidden border-2 border-blue-400">
-              <img id="developer-pic" src="#" alt="Developer Picture" class="w-full h-full object-cover">
+        <!-- Co-Developer -->
+        <div class="flex flex-row items-center">
+          <div class="profile-pic w-44 h-44 rounded-full overflow-hidden border-2 border-blue-400">
+            <img id="co-developer-pic" src="images/Profiles/default.jpg" alt="Co-Developer Picture" class="w-full h-full object-cover">
           </div>
-          <div>
-              <h2 id="coDeveloper-profile-name" class="text-xl font-semibold text-white"></h2>     
-              <p class="text-sm text-gray-400">Co-Lead Developer</p>
+          <div class="ml-5">
+            <h2 id="co-developer-name-profile" class="text-xl font-semibold text-white">Co-Developer Name</h2>
+            <p class="text-sm text-gray-400">Co-Lead Developer</p>
           </div>
-        </div>    
-
-
-          
+        </div>
       </div>
-  
+
       <!-- Buttons -->
-        <div class="col-span-1 md:col-span-2 flex flex-col md:flex-row items-start justify-center  md:space-x-4 md:space-y-0 p-4">
-          <a id="play-game" href="#" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg hover:bg-green-700 hidden">Play Game</a>
-          <a href="index.html" class="bg-blue-600 px-4 py-2 md:mt-3 rounded-lg hover:bg-blue-700">Back to Home</a>
+      <div class="col-span-1 md:col-span-2 flex flex-col md:flex-row items-start justify-center md:space-x-4 md:space-y-0 p-4 gap-2">
+        <a id="play-game" href="#" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg hover:bg-green-700 hidden">Play Game</a>
+        <a href="index.html" class="bg-blue-600 px-4 py-2 md:mt-3 rounded-lg hover:bg-blue-700">Back to Home</a>
       </div>
   </div>
   
   <script>
     const games = [
-      { developerName: "Josh Pagapong",Co_developerName:"Melanie Abalde", name: "The Adventure of Bobord", img: "images/The Adventure of Bobord.webp", developer: "Bobord Creations", link: "https://ej0077.github.io/Adventureofbobords/" },
-      { developerName: "Josh Pagapong",Co_developerName:"Melanie Abalde", name: "Ticket Rush", img: "images/Ticket Rush.jpg", developer: "Speed Studios", link: "https://kyusans.github.io/ticket-rush/" },
-      { developerName: "Josh Pagapong",Co_developerName:"Melanie Abalde", name: "Chronicles of Macahambus", img: "images/Chronicles of Macahambus.png", developer: "Epic Devs", link: "https://play.unity.com/en/games/799f11cb-3d1d-44d7-8ab0-0152634c2276/chronicles-of-macahambus-webversion" },
-      { developerName: "Josh Pagapong",Co_developerName:"Melanie Abalde", name: "Apokz", img: "images/Apokz.webp", developer: "Studio Alpha", link: "https://kittim1.github.io/IgnaligGame.github.io/" },
-      { developerName: "Josh Pagapong",Co_developerName:"Melanie Abalde", name: "Outbreak", img: "images/Outbreak.png", developer: "Biohazard Games", link: "https://chillingsss.github.io/outbreak/" },
-      { developerName: "Josh Pagapong",Co_developerName:"Melanie Abalde", name: "Gravity Shift", img: "images/Gravity Shift.png", developer: "Gravity Labs", link: "https://francis385.itch.io/gravity-shift" },
-      { developerName: "Josh Pagapong",Co_developerName:"Melanie Abalde", name: "The Further", img: "images/The Further.png", developer: "Mystic Studios", link: "https://chnix21.github.io/TheFurther/" },
-      { developerName: "Josh Pagapong",Co_developerName:"Melanie Abalde", name: "Into the Light", img: "images/Into the Light.png", developer: "Light Studios", link: "https://mellifluous-tanuki-157f64.netlify.app/" },
-      { developerName: "Josh Pagapong",Co_developerName:"Melanie Abalde", name: "Shattered Department", img: "images/Shattered Department.png", developer: "Broken Studios", link: "https://giannisidore.github.io/gamdev/" },
-      { developerName: "Josh Pagapong",Co_developerName:"Melanie Abalde", name: "The Phinma Chronicles", img: "images/The Phinma Chronicles.webp", developer: "Phinma Interactive", link: "https://dragonme3.github.io/PhinmaChronicle/" },
-      { developerName: "Josh Pagapong",Co_developerName:"Melanie Abalde", name: "Urban Runner", img: "images/Urban Runner.png", developer: "City Sprint Games", link: "https://dodong2323.github.io/urban-runner/" },
-      { developerName: "Josh Pagapong",Co_developerName:"Melanie Abalde", name: "Queen Street Slayer", img: "images/Queen Street Slayer.jpg", developer: "Urban Legends", link: "https://vanmorre.github.io/Streetslayer/" },
-      { developerName: "Josh Pagapong",Co_developerName:"Melanie Abalde", name: "The Locked: A Journey Back Home", img: "images/The Locked.png", developer: "Locked Games", link: "https://thechaoticzero.itch.io/a-journey-through-time" }
-    ];
-
+    { 
+      developerName: "Josh Pagapong", Co_developerName: "Melanie Abalde", 
+      name: "The Adventure of Bobord", 
+      img: "images/The Adventure of Bobord.webp", 
+      developer: "Bobord Creations", 
+      link: "https://ej0077.github.io/Adventureofbobords/",
+      description: "Embark on an epic journey with Bobord as he explores mystical lands, overcomes tricky puzzles, and battles fearsome foes in this exciting adventure game."
+    },
+    { 
+      developerName: "Josh Pagapong", Co_developerName: "Melanie Abalde", 
+      name: "Ticket Rush", 
+      img: "images/Ticket Rush.jpg", 
+      developer: "Speed Studios", 
+      link: "https://kyusans.github.io/ticket-rush/",
+      description: "Race against time to collect as many tickets as possible while avoiding obstacles and mastering different levels in this fast-paced arcade game."
+    },
+    { 
+      developerName: "Josh Pagapong", Co_developerName: "Melanie Abalde", 
+      name: "Chronicles of Macahambus", 
+      img: "images/Chronicles of Macahambus.png", 
+      developer: "Epic Devs", 
+      link: "https://play.unity.com/en/games/799f11cb-3d1d-44d7-8ab0-0152634c2276/chronicles-of-macahambus-webversion",
+      description: "Step into the shoes of a warrior exploring the historic Macahambus caves, solving puzzles, and fighting mythical creatures in this story-rich adventure."
+    },
+    { 
+      developerName: "Josh Pagapong", Co_developerName: "Melanie Abalde", 
+      name: "Apokz", 
+      img: "images/Apokz.webp", 
+      developer: "Studio Alpha", 
+      link: "https://kittim1.github.io/IgnaligGame.github.io/",
+      description: "A thrilling post-apocalyptic survival game where you scavenge for resources, fight off bandits, and uncover the mysteries of a world in ruins."
+    },
+    { 
+      developerName: "Josh Pagapong", Co_developerName: "Melanie Abalde", 
+      name: "Outbreak", 
+      img: "images/Outbreak.png", 
+      developer: "Biohazard Games", 
+      link: "https://chillingsss.github.io/outbreak/",
+      description: "A deadly virus outbreak has taken over the city. Play as a survivor trying to escape the infected zones while solving puzzles and staying alive."
+    },
+    { 
+      developerName: "Josh Pagapong", Co_developerName: "Melanie Abalde", 
+      name: "Gravity Shift", 
+      img: "images/Gravity Shift.png", 
+      developer: "Gravity Labs", 
+      link: "https://francis385.itch.io/gravity-shift",
+      description: "Defy the laws of physics in this puzzle-platformer where you manipulate gravity to navigate treacherous environments and uncover hidden secrets."
+    },
+    { 
+      developerName: "Josh Pagapong", Co_developerName: "Melanie Abalde", 
+      name: "The Further", 
+      img: "images/The Further.png", 
+      developer: "Mystic Studios", 
+      link: "https://chnix21.github.io/TheFurther/",
+      description: "A spine-chilling horror game set in Phinma COC, where players must navigate haunted halls, evade The Red Man, and uncover dark secrets."
+    },
+    { 
+      developerName: "Josh Pagapong", Co_developerName: "Melanie Abalde", 
+      name: "Into the Light", 
+      img: "images/Into the Light.png", 
+      developer: "Light Studios", 
+      link: "https://mellifluous-tanuki-157f64.netlify.app/",
+      description: "Solve puzzles and explore a world consumed by darkness as you search for the lost light in this atmospheric and emotional adventure game."
+    },
+    { 
+      developerName: "Josh Pagapong", Co_developerName: "Melanie Abalde", 
+      name: "Shattered Department", 
+      img: "images/Shattered Department.png", 
+      developer: "Broken Studios", 
+      link: "https://giannisidore.github.io/gamdev/",
+      description: "Investigate a mysterious abandoned department building and uncover the truth behind its dark past in this eerie mystery-horror game."
+    },
+    { 
+      developerName: "Josh Pagapong", Co_developerName: "Melanie Abalde", 
+      name: "The Phinma Chronicles", 
+      img: "images/The Phinma Chronicles.webp", 
+      developer: "Phinma Interactive", 
+      link: "https://dragonme3.github.io/PhinmaChronicle/",
+      description: "An action-packed RPG set in Phinma COC, where players battle supernatural forces while discovering hidden truths about the school."
+    },
+    { 
+      developerName: "Josh Pagapong", Co_developerName: "Melanie Abalde", 
+      name: "Urban Runner", 
+      img: "images/Urban Runner.png", 
+      developer: "City Sprint Games", 
+      link: "https://dodong2323.github.io/urban-runner/",
+      description: "Run, jump, and slide your way through the city streets in this endless runner packed with high-speed action and challenges."
+    },
+    { 
+      developerName: "Josh Pagapong", Co_developerName: "Melanie Abalde", 
+      name: "Queen Street Slayer", 
+      img: "images/Queen Street Slayer.jpg", 
+      developer: "Urban Legends", 
+      link: "https://vanmorre.github.io/Streetslayer/",
+      description: "Hunt down supernatural creatures lurking in the shadows of Queen Street in this dark, action-packed thriller."
+    },
+    { 
+      developerName: "Josh Pagapong", Co_developerName: "Melanie Abalde", 
+      name: "The Locked: A Journey Back Home", 
+      img: "images/The Locked.png", 
+      developer: "Locked Games", 
+      link: "https://thechaoticzero.itch.io/a-journey-through-time",
+      description: "A mind-bending time-travel adventure where you must solve puzzles and navigate different timelines to find your way back home."
+    }
+  ];
+  
+  
     const urlParams = new URLSearchParams(window.location.search);
     const gameName = urlParams.get('name');
     const game = games.find(g => g.name === gameName);
@@ -85,10 +175,25 @@
       document.getElementById("game-image").src = game.img;
       document.getElementById("game-image").alt = game.name;
       document.getElementById("game-developer").textContent = `Developer: ${game.developer}`;
-      document.getElementById("developer-name").textContent = game.developerName; 
-      document.getElementById("co-developer-name").textContent = game.Co_developerName; 
-    
 
+      document.getElementById("developer-name").textContent = game.developerName;
+      document.getElementById("co-developer-name").textContent = game.Co_developerName;
+      
+      document.getElementById("developer-name-profile").textContent = game.developerName;
+      document.getElementById("co-developer-name-profile").textContent = game.Co_developerName;
+
+      document.getElementById("game-description").textContent = game.description; 
+
+
+      // Format names for profile images (lowercase + no spaces)
+      const devPic = `images/Profiles/${game.developerName.replace(/\s+/g, "").toLowerCase()}.jpg`;
+      const coDevPic = `images/Profiles/${game.Co_developerName.replace(/\s+/g, "").toLowerCase()}.jpg`;
+
+      // Assign profile images
+      document.getElementById("developer-pic").src = devPic;
+      document.getElementById("co-developer-pic").src = coDevPic;
+
+      // Show "Play Game" button if a link exists
       if (game.link) {
         const playButton = document.getElementById("play-game");
         playButton.href = game.link;
@@ -98,5 +203,6 @@
       document.body.innerHTML = "<h1 class='text-center text-white text-2xl'>Game not found</h1>";
     }
   </script>
+
 </body>
 </html>
