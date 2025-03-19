@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Details</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black text-white flex flex-col items-center min-h-screen p-6">
@@ -27,7 +28,7 @@
     <!-- Developer Profile -->
     <div class="row-span-1 md:col-span-2 col-span-1 p-8 bg-gray-900 rounded-xl shadow-md flex flex-col items-start gap-4">
       <!-- Developer -->
-      <div class="flex flex-row items-start">
+      <div class="flex flex-row items-center">
         <div class="profile-pic w-24 h-24 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-blue-400">
           <img id="developer-pic" src="images/Profiles/default.jpg" alt="Developer Picture" class="w-full h-full object-cover">
         </div>
@@ -51,8 +52,27 @@
 
     <!-- Buttons -->
     <div class="col-span-1 md:col-span-2 flex flex-col md:flex-row items-start justify-center md:space-x-4 md:space-y-0 p-4 gap-2">
-      <a id="play-game" href="#" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg hover:bg-green-700 hidden">Play Game</a>
-      <a href="index.html" class="bg-blue-600 px-4 py-2 md:mt-3 rounded-lg hover:bg-blue-700">Back to Home</a>
+      <a id="play-game" href="#" target="_blank"
+   class="relative text-[#1BFD9C] text-sm font-semibold px-12 py-3   rounded-lg border-2 border-[#1BFD9C] 
+          bg-transparent overflow-hidden transition-all duration-300 ease-in-out 
+          before:absolute before:left-[-5em] before:w-10 before:h-full before:top-0 before:bg-gradient-to-r 
+          before:from-transparent before:via-[#1BFD9C]/30 before:to-transparent before:transition-transform 
+          before:duration-500 hover:text-[#82ffc9] hover:shadow-[0_0_15px_#1BFD9C] hover:border-[#82ffc9] 
+          before:hover:translate-x-[15em]">
+    Play Game
+</a>
+
+
+      <a href="index.html" 
+      class="relative px-8 py-2  text-white font-semibold rounded-lg border-2 border-blue-500 
+             bg-transparent transition-all duration-300 
+             before:absolute before:left-[-4em] before:w-4 before:h-full before:top-0 before:bg-gradient-to-r 
+             before:from-transparent before:via-blue-500/20 before:to-transparent before:transition-transform 
+             before:duration-500 hover:text-blue-300 hover:shadow-blue-500/50 hover:shadow-lg 
+             before:hover:translate-x-[12em]">
+       Back to Home
+   </a>
+   
     </div>
   </div>
 
@@ -83,8 +103,8 @@
   { 
     developerName: "Vince Tillo", 
     coDeveloperName: "Nathaniel Iroc", 
-    developerImg: "images/Profiles/josh.jpg",  
-    coDeveloperImg: "images/Profiles/melanie.jpg",  
+    developerImg: "images/Profiles/Tillo.jpg",  
+    coDeveloperImg: "images/Profiles/Iroc.jpg",  
     name: "Chronicles of Macahambus", 
     img: "images/Chronicles of Macahambus.png", 
     developer: "Epic Devs", 
@@ -92,10 +112,10 @@
     description: "Step into the shoes of a warrior exploring the historic Macahambus caves, solving puzzles, and fighting mythical creatures in this story-rich adventure."
   },
   { 
-    developerName: "Josh Pagapong", 
-    coDeveloperName: "Melanie Abalde", 
-    developerImg: "images/Profiles/josh.jpg",  
-    coDeveloperImg: "images/Profiles/melanie.jpg",  
+    developerName: "Kittim Ignalig", 
+    coDeveloperName: "Khendal Thur Calinawan", 
+    developerImg: "images/Profiles/Kittim.jpg",  
+    coDeveloperImg: "images/Profiles/Khendal.jpg",  
     name: "Apokz", 
     img: "images/Apokz.webp", 
     developer: "Studio Alpha", 
@@ -111,11 +131,11 @@
     img: "images/Outbreak.png", 
     developer: "Biohazard Games", 
     link: "https://chillingsss.github.io/outbreak/",
-    description: " Phinma Cagayan de Oro College is an RPG where you play as the sole survivor trapped inside the campus after a sudden zombie outbreak. With no allies and limited resources, you must navigate the school, scavenge supplies, and fight off the undead while searching for a way out. Every decision matters as you unlock new areas, solve challenges, and prepare to venture beyond the campus into the unknown real world. Will you escape and uncover the truth behind the outbreak, or will you become just another victim? Survive, adapt, and break free."
+    description: "Phinma Cagayan de Oro College is an RPG where you play as the sole survivor trapped inside the campus after a sudden zombie outbreak. With no allies and limited resources, you must navigate the school, scavenge supplies, and fight off the undead while searching for a way out. Every decision matters as you unlock new areas, solve challenges, and prepare to venture beyond the campus into the unknown real world. Will you escape and uncover the truth behind the outbreak, or will you become just another victim? Survive, adapt, and break free."
   },
   { 
-    developerName: "Josh Pagapong", 
-    coDeveloperName: "Melanie Abalde", 
+    developerName: "", 
+    coDeveloperName: "", 
     developerImg: "images/Profiles/josh.jpg",  
     coDeveloperImg: "images/Profiles/melanie.jpg",  
     name: "Gravity Shift", 
@@ -127,8 +147,8 @@
   { 
     developerName: "Christian Mark S. Valle", 
     coDeveloperName: "Krystyll Ira Andrei T. Plaza", 
-    developerImg: "images/Profiles/josh.jpg",  
-    coDeveloperImg: "images/Profiles/melanie.jpg",  
+    developerImg: "images/Profiles/Christian.jpg",  
+    coDeveloperImg: "images/Profiles/Ira.jpg",  
     name: "The Further", 
     img: "images/The Further.png", 
     developer: "Mystic Studios", 
@@ -149,17 +169,17 @@
   { 
     developerName: "Giann Isidore Legaspi", 
     coDeveloperName: "Hiedern Montejo",
-    developerImg: "images/Profiles/josh.jpg",  
-    coDeveloperImg: "images/Profiles/melanie.jpg",  
+    developerImg: "images/Profiles/Gian.png",  
+    coDeveloperImg: "images/Profiles/Heidern.jpg",  
     name: "Shattered Department", 
-    img: "images/Shattered Department.png", 
+    img: "images/Shattered Department.png",   
     developer: "Broken Studios", 
     link: "https://giannisidore.github.io/gamdev/",
     description: "Investigate a mysterious abandoned department building and uncover the truth behind its dark past in this eerie mystery-horror game."
   },
   { 
-    developerName: "Josh Pagapong", 
-    coDeveloperName: "Melanie Abalde",
+    developerName: "Chester Kyle A Santos", 
+    coDeveloperName: "Rudgel Tagaan",
     developerImg: "images/Profiles/josh.jpg",  
     coDeveloperImg: "images/Profiles/melanie.jpg",  
     name: "The Phinma Chronicles", 
@@ -169,21 +189,21 @@
     description: "An action-packed game set in Phinma COC, where players battle supernatural forces while discovering hidden truths about the school."
   },
   { 
-    developerName: "Josh Pagapong", 
-    coDeveloperName: "Melanie Abalde", 
-    developerImg: "images/Profiles/josh.jpg",  
-    coDeveloperImg: "images/Profiles/mela.dev.jpg",  
+    developerName: "David Josh C. Gabonada", 
+    coDeveloperName: "Christian S. Noynay", 
+    developerImg: "images/Profiles/Gabonada.jpg",  
+    coDeveloperImg: "images/Profiles/Noynay.png",  
     name: "Urban Runner", 
     img: "images/Urban Runner.png", 
     developer: "City Sprint Games", 
-    link: "https://dodong2323.github.io/urban-runner/",
+    link: "https://dodong2323.github.io/urban-runner/", 
     description: "Run, jump, and slide your way through the city streets in this endless runner packed with high-speed action and challenges."
   },
   { 
     developerName: "Van Morre Guangco", 
     coDeveloperName: "Immari Leah B. Mayordomo",
-    developerImg: "images/Profiles/josh.jpg",  
-    coDeveloperImg: "images/Profiles/melanie.jpg",  
+    developerImg: "images/Profiles/Van.jpeg",  
+    coDeveloperImg: "images/Profiles/Mayordomo.jpg",  
     name: "Queen Street Slayer", 
     img: "images/Queen Street Slayer.jpg", 
     developer: "Urban Legends", 
@@ -191,8 +211,8 @@
     description: "Urban Runner is a fast-paced 2D side-scrolling action game set in a vibrant city environment. Players control a young runner navigating bustling streets, collecting items, dodging obstacles, and overcoming challenges. With five progressively difficult stages, players must evade traffic cones and stray dogs while mastering quick reflexes and strategic jumps. Featuring smooth animations, simple yet engaging gameplay, and a dynamic urban theme, Urban Runner delivers an exciting and accessible experience for casual gamers."
   },
   { 
-    developerName: "Josh Pagapong", 
-    coDeveloperName: "Melanie Abalde",
+    developerName: "Ivan Ky Versoza", 
+    coDeveloperName: "Bea Ysabel Lachica",
     developerImg: "images/Profiles/josh.jpg",  
     coDeveloperImg: "images/Profiles/melanie.jpg",  
     name: "The Locked: A Journey Back Home", 
