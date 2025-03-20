@@ -17,7 +17,8 @@
     filter: blur(100px);
     animation: rotate 10s cubic-bezier(0.1, 0.2, 0.5, 0.1) alternate infinite;
     z-index: -1;
-  }
+    -webkit-animation: rotate 10s cubic-bezier(0.1, 0.2, 0.5, 0.1) alternate infinite;
+}
   
   @media (min-width: 720px) {
     .gradient {

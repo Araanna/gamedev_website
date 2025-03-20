@@ -4,77 +4,102 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Details</title>
-  
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black text-white flex flex-col items-center min-h-screen p-6">
-  <div class="gradient"></div>
- 
-  <div class="parent grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-3 p-2 w-full max-w-6xl">
-    <!-- Game Card -->
-    <div class="col-span-1 md:col-span-2 row-span-2 p-2 bg-gray-800 rounded-lg shadow-md">
-      <div class="flex flex-wrap justify-center gap-6 p-4">
-        <img id="game-image" class="w-full max-w-[530px] h-auto md:h-[690px] rounded-md" alt="Game Image">
-        <div class="content text-center">
-          <h1 id="game-title" class="text-xl font-bold text-blue-400"></h1>
-          <p id="game-developer" class="text-sm text-gray-300"></p>
-          <p class="desc mt-1 text-gray-400 text-xs">
-            This game was created by <span id="developer-name" class="font-semibold text-blue-300"></span> & 
-            <span id="co-developer-name" class="font-semibold text-blue-300"></span>. 
-            <span id="game-description" class="text-gray-400 text-sm mt-2 block"></span>
-          </p>
-        </div>
-      </div>
+  <!-- Background Container -->
+  <div class="fixed inset-0 overflow-hidden">
+    <!-- Gradient Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-black opacity-60"></div>
+
+    <!-- Glowing Spheres -->
+    <div class="absolute inset-0">
+      <div class="absolute top-10 left-10 w-60 h-60 bg-blue-500 rounded-full blur-3xl opacity-40"></div>
+      <div class="absolute bottom-10 right-20 w-80 h-80 bg-purple-500 rounded-full blur-[120px] opacity-40"></div>
+      <div class="absolute top-1/2 left-1/3 w-52 h-52 bg-pink-500 rounded-full blur-3xl opacity-30"></div>
     </div>
 
-    <!-- Developer Profile -->
-    <div class="row-span-1 md:col-span-2 col-span-1 p-8 bg-gray-900 rounded-xl shadow-md flex flex-col items-start gap-4">
-      <!-- Developer -->
-      <div class="flex flex-row items-center">
-        <div class="profile-pic w-24 h-24 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-blue-400">
-          <img id="developer-pic" src="images/Profiles/default.jpg" alt="Developer Picture" class="w-full h-full object-cover">
-        </div>
-        <div class="ml-5">
-          <h2 id="developer-name-profile" class="text-xl font-semibold text-white">Developer Name</h2>
-          <p class="text-sm text-gray-400">Lead Developer</p>
+    <!-- Grid Overlay -->
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')] opacity-10"></div>
+
+    <!-- Noise Overlay -->
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise.png')] opacity-5"></div>
+
+    <!-- Particles Container -->
+    <div class="absolute inset-0 pointer-events-none" id="particles-container"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="relative z-10 w-full max-w-6xl p-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-3 p-2 w-full">
+      
+      <!-- Game Card -->
+      <div class="col-span-1 md:col-span-2 row-span-2 p-4 bg-slate-600/50 rounded-lg shadow-md">
+        <div class="flex flex-wrap justify-center gap-6 p-4">
+          <img id="game-image" class="w-full max-w-[530px] h-auto md:h-[690px] rounded-md" alt="Game Image">
+          <div class="text-center">
+            <h1 id="game-title" class="text-xl font-bold text-blue-400"></h1>
+            <p id="game-developer" class="text-sm text-gray-300"></p>
+            <p class="desc mt-1 text-gray-400 text-xs">
+              This game was created by 
+              <span id="developer-name" class="font-semibold text-blue-300"></span> & 
+              <span id="co-developer-name" class="font-semibold text-blue-300"></span>. 
+              <span id="game-description" class="text-gray-400 text-sm mt-2 block"></span>
+            </p>
+          </div>
         </div>
       </div>
 
-      <!-- Co-Developer -->
-      <div class="flex flex-row items-center">
-        <div class="profile-pic w-24 h-24 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-blue-400">
-          <img id="co-developer-pic" src="images/Profiles/default.jpg" alt="Co-Developer Picture" class="w-full h-full object-cover">
+      <!-- Developer Profile -->
+      <div class="row-span-1 md:col-span-2 col-span-1 p-8 bg-slate-700/50 rounded-xl shadow-md flex flex-col items-start gap-4">
+        <!-- Developer -->
+        <div class="flex flex-row items-center">
+          <div class="w-24 h-24 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-blue-400">
+            <img id="developer-pic" src="images/Profiles/default.jpg" alt="Developer Picture" class="w-full h-full object-cover">
+          </div>
+          <div class="ml-5">
+            <h2 id="developer-name-profile" class="text-xl font-semibold text-white">Developer Name</h2>
+            <p class="text-sm text-gray-400">Lead Developer</p>
+          </div>
         </div>
-        <div class="ml-5">
-          <h2 id="co-developer-name-profile" class="text-xl font-semibold text-white">Co-Developer Name</h2>
-          <p class="text-sm text-gray-400">Co-Lead Developer</p>
+
+        <!-- Co-Developer -->
+        <div class="flex flex-row items-center">
+          <div class="w-24 h-24 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-blue-400">
+            <img id="co-developer-pic" src="images/Profiles/default.jpg" alt="Co-Developer Picture" class="w-full h-full object-cover">
+          </div>
+          <div class="ml-5">
+            <h2 id="co-developer-name-profile" class="text-xl font-semibold text-white">Co-Developer Name</h2>
+            <p class="text-sm text-gray-400">Co-Lead Developer</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Buttons -->
-    <div class="col-span-1 md:col-span-2 flex flex-col md:flex-row items-start justify-center md:space-x-4 md:space-y-0 p-4 gap-2">
-      <a id="play-game" href="#" target="_blank"
-   class="relative text-[#1BFD9C] text-sm font-semibold px-12 py-3   rounded-lg border-2 border-[#1BFD9C] 
-          bg-transparent overflow-hidden transition-all duration-300 ease-in-out 
-          before:absolute before:left-[-5em] before:w-10 before:h-full before:top-0 before:bg-gradient-to-r 
-          before:from-transparent before:via-[#1BFD9C]/30 before:to-transparent before:transition-transform 
-          before:duration-500 hover:text-[#82ffc9] hover:shadow-[0_0_15px_#1BFD9C] hover:border-[#82ffc9] 
-          before:hover:translate-x-[15em]">
-    Play Game
-</a>
+      <!-- Buttons -->
+      <div class="col-span-1 md:col-span-2 flex flex-col md:flex-row items-start justify-center md:space-x-4 md:space-y-0 p-4 gap-2">
+        <a id="play-game" href="#" target="_blank"
+           class="relative text-[#1BFD9C] text-sm font-semibold px-12 py-3 rounded-lg border-2 border-[#1BFD9C] 
+                  bg-transparent overflow-hidden transition-all duration-300 ease-in-out 
+                  before:absolute before:left-[-5em] before:w-10 before:h-full before:top-0 before:bg-gradient-to-r 
+                  before:from-transparent before:via-[#1BFD9C]/30 before:to-transparent before:transition-transform 
+                  before:duration-500 hover:text-[#82ffc9] hover:shadow-[0_0_15px_#1BFD9C] hover:border-[#82ffc9] 
+                  before:hover:translate-x-[15em]">
+            Play Game
+        </a>
 
+        <a href="index.html" 
+           class="relative px-8 py-2.5 text-white font-semibold rounded-lg border-2 border-blue-500 
+                  bg-transparent transition-all duration-300 
+                  before:absolute before:left-[-4em] before:w-4 before:h-full before:top-0 before:bg-gradient-to-r 
+                  before:from-transparent before:via-blue-500/20 before:to-transparent before:transition-transform 
+                  before:duration-500 hover:text-blue-300 hover:shadow-blue-500/50 hover:shadow-lg 
+                  before:hover:translate-x-[12em]">
+            Back to Home
+        </a>
+      </div>
 
-      <a href="index.html" 
-      class="relative px-8 py-2.5  text-white font-semibold rounded-lg border-2 border-blue-500 
-             bg-transparent transition-all duration-300 
-             before:absolute before:left-[-4em] before:w-4 before:h-full before:top-0 before:bg-gradient-to-r 
-             before:from-transparent before:via-blue-500/20 before:to-transparent before:transition-transform 
-             before:duration-500 hover:text-blue-300 hover:shadow-blue-500/50 hover:shadow-lg 
-             before:hover:translate-x-[12em]">
-       Back to Home
-   </a>
-   
     </div>
   </div>
 
