@@ -4,28 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Dev Web</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+ 
 </head>
 
 <body class="bg-black text-gray-900 flex flex-col min-h-screen">
-  <!-- Navbar -->
-  <header>
-    <nav class="fixed z-50 backdrop-blur-lg bg-white/20 shadow-lg sm:p-6 p-3  mx-auto my-2  rounded-lg w-[90%] sm:w-[95%] md:w-[95%] lg:w-[92rem] flex flex-col md:flex-row md:items-center md:justify-start transform translate-x-6 translate-y-2">
-      <span class="text-slate-50 font-semibold text-lg">GAME EXPO 2025</span>
-    </nav>
-  </header>
+  
+ <!-- Gradient Background -->
+<div class="gradient"></div>
 
-  <!-- Main Content -->
-  <main class="container mx-auto p-6 mt-16 flex-grow">
-    <h1 class="text-3xl text-white font-bold text-left my-10 mx-6 ">Games</h1>
-    <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mx-auto gap-6"></div>
-  </main>
+<!-- Navbar -->
+<header class="fixed z-50 top-0 left-0 right-0">
+  <nav class="backdrop-blur-md bg-white/20 shadow-lg mx-auto mt-10 w-[90%] sm:w-[95%] lg:w-[92rem] rounded-lg px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+    <!-- Logo/Title -->
+    <span class="text-white font-semibold text-lg">GAME EXPO 2025</span>
+  </nav>
+</header>
 
-  <!-- Footer -->
-  <footer class="backdrop-blur-lg bg-slate-50/20 shadow-lg text-white text-right p-5 rounded-t-lg">
-    <p class="space-y-10">&copy; 2025 Game Dev Web. All rights reserved.</p>
-  </footer>
+<!-- Main Content -->
+<main class="container mx-auto p-6 mt-20 flex-grow relative z-10">
+  <h1 class="text-3xl text-white font-bold text-left my-10 mx-6">Games</h1>
+  <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mx-auto w-[90%] sm:w-[95%] lg:w-[92rem]"></div>
+</main>
+
+<!-- Footer -->
+<footer class="backdrop-blur-lg bg-slate-50/20 shadow-lg text-white text-right p-5 rounded-t-lg relative z-10">
+  <p class="space-y-10">&copy; 2025 Game Dev Web. All rights reserved.</p>
+</footer>
+
 
   <!-- JavaScript -->
   <script>
@@ -51,7 +62,7 @@
     games.forEach(game => {
       const gameCard = `
         <a href="game.html?name=${encodeURIComponent(game.name)}" class="block">
-          <div class="w-full max-w-sm backdrop-blur-lg bg-slate-900/40 shadow-lg border border-gray-900 rounded-lg transition duration-300 hover:scale-105 hover:shadow-lg">
+          <div class="w-full max-w-sm backdrop-blur-lg bg-slate-900/40 shadow-lg border border-slate-100/20 rounded-lg transition duration-300 hover:scale-105 hover:shadow-lg">
             <img class="rounded-t-lg w-full h-64 object-cover" src="${game.img}" alt="${game.name}" />
             <div class="text-center">
               <h1 class="p-6 text-md font-semibold tracking-tight text-gray-100">${game.name}</h1>
