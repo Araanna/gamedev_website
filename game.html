@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Details</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="./script.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+
 </head>
-<body class="bg-black text-white flex flex-col items-center min-h-screen p-6">
+
+<body class="bg-black text-white flex flex-col items-center min-h-screen p-3">
   <!-- Background Container -->
-  <div class="fixed inset-0 overflow-hidden">
+  <div class="fixed inset-0 overflow-hidden -z-10">
     <!-- Gradient Background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-black opacity-60"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-black opacity-50"></div>
 
     <!-- Glowing Spheres -->
     <div class="absolute inset-0">
-      <div class="absolute top-10 left-10 w-60 h-60 bg-blue-500 rounded-full blur-3xl opacity-40"></div>
-      <div class="absolute bottom-10 right-20 w-80 h-80 bg-purple-500 rounded-full blur-[120px] opacity-40"></div>
-      <div class="absolute top-1/2 left-1/3 w-52 h-52 bg-pink-500 rounded-full blur-3xl opacity-30"></div>
+      <div class="absolute top-6 left-6 w-40 h-40 bg-blue-500 rounded-full blur-2xl opacity-30"></div>
+      <div class="absolute bottom-6 right-12 w-56 h-56 bg-purple-500 rounded-full blur-[90px] opacity-30"></div>
+      <div class="absolute top-1/2 left-1/3 w-36 h-36 bg-pink-500 rounded-full blur-2xl opacity-20"></div>
     </div>
 
     <!-- Grid Overlay -->
@@ -26,289 +28,117 @@
 
     <!-- Noise Overlay -->
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise.png')] opacity-5"></div>
-
-    <!-- Particles Container -->
-    <div class="absolute inset-0 pointer-events-none" id="particles-container"></div>
   </div>
 
   <!-- Main Content -->
-  <div class="relative z-10 w-full max-w-6xl p-6">
-    <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-3 p-2 w-full">
-      
+  <div class="relative z-10 w-full max-w-4xl p-3">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-2 w-full">
       <!-- Game Card -->
-      <div class="col-span-1 md:col-span-2 row-span-2 p-4 bg-slate-600/50 rounded-lg shadow-md">
-        <div class="flex flex-wrap justify-center gap-6 p-4">
-          <img id="game-image" class="w-full max-w-[530px] h-auto md:h-[690px] rounded-md" alt="Game Image">
-          <div class="text-center">
-            <h1 id="game-title" class="text-xl font-bold text-blue-400"></h1>
-            <p id="game-developer" class="text-sm text-gray-300"></p>
-            <p class="desc mt-1 text-gray-400 text-xs">
-              This game was created by 
-              <span id="developer-name" class="font-semibold text-blue-300"></span> & 
-              <span id="co-developer-name" class="font-semibold text-blue-300"></span>. 
-              <span id="game-description" class="text-gray-400 text-sm mt-2 block"></span>
+      <div
+        class="col-span-1 md:col-span-2 p-4 bg-slate-800/60 backdrop-blur-md rounded-xl shadow-lg border border-slate-700/50">
+        <div class="flex flex-col items-center">
+          <img id="game-image"
+            src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+            class="w-full max-w-[320px] h-auto md:h-[380px] rounded-lg shadow-md" alt="Game Image">
+          <div class="text-center mt-4">
+            <h1 id="game-title" class="text-2xl font-bold text-blue-400">Cyber Quest</h1>
+            <p id="game-developer" class="text-sm text-gray-300 mt-1">Neon Games Studio</p>
+            <p class="desc mt-3 text-gray-300 text-sm">
+              This game was created by
+              <span id="developer-name" class="font-semibold text-blue-300">Alex Johnson</span> &
+              <span id="co-developer-name" class="font-semibold text-blue-300">Sam Williams</span>.
+            </p>
+            <p id="game-description" class="text-gray-400 text-sm mt-3">
+              Cyber Quest is an action-packed adventure set in a neon-drenched cyberpunk world.
+              Explore vast digital landscapes, battle rogue AIs, and uncover the secrets of the virtual realm.
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Developer Profile -->
-      <div class="row-span-1 md:col-span-2 col-span-1 p-8 bg-slate-700/50 rounded-xl shadow-md flex flex-col items-start gap-4">
-        <!-- Developer -->
-        <div class="flex flex-row items-center">
-          <div class="w-24 h-24 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-blue-400">
-            <img id="developer-pic" src="images/Profiles/default.jpg" alt="Developer Picture" class="w-full h-full object-cover">
+      <!-- Developer Section -->
+      <div class="col-span-1 md:col-span-2 flex flex-col">
+        <!-- Developer Profile Cards -->
+        <div class="developer-card bg-slate-800/60 backdrop-blur-md rounded-xl p-3 border border-slate-700/50">
+          <!-- Developer -->
+          <div class="flex items-center hover:bg-slate-700/40 h-20 rounded-lg transition px-2 py-1">
+            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-400 flex-shrink-0">
+              <img id="developer-pic"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+                alt="Developer Picture" class="w-full h-full object-cover">
+            </div>
+            <div class="flex flex-col justify-center h-full ml-3">
+              <h2 id="developer-name-profile" class="text-sm font-semibold text-white leading-tight">
+                Alex Johnson
+              </h2>
+              <p class="text-xs text-gray-400 leading-none">Lead Developer</p>
+              <p class="text-xs text-blue-400 mt-1">5+ years experience</p>
+            </div>
           </div>
-          <div class="ml-5">
-            <h2 id="developer-name-profile" class="text-xl font-semibold text-white">Developer Name</h2>
-            <p class="text-sm text-gray-400">Lead Developer</p>
+
+          <!-- Co-Developer -->
+          <div class="flex items-center hover:bg-slate-700/40 h-20 rounded-lg transition px-2 py-1">
+            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-400 flex-shrink-0">
+              <img id="co-developer-pic"
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+                alt="Co-Developer Picture" class="w-full h-full object-cover">
+            </div>
+            <div class="flex flex-col justify-center h-full ml-3">
+              <h2 id="co-developer-name-profile" class="text-sm font-semibold text-white leading-tight">
+                Sam Williams
+              </h2>
+              <p class="text-xs text-gray-400 leading-none">Co-Lead Developer</p>
+              <p class="text-xs text-blue-400 mt-1">UI/UX Specialist</p>
+            </div>
           </div>
         </div>
-
-        <!-- Co-Developer -->
-        <div class="flex flex-row items-center">
-          <div class="w-24 h-24 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-blue-400">
-            <img id="co-developer-pic" src="images/Profiles/default.jpg" alt="Co-Developer Picture" class="w-full h-full object-cover">
-          </div>
-          <div class="ml-5">
-            <h2 id="co-developer-name-profile" class="text-xl font-semibold text-white">Co-Developer Name</h2>
-            <p class="text-sm text-gray-400">Co-Lead Developer</p>
+        <!-- Additional Info -->
+        <div class="mt-4 bg-slate-800/40 backdrop-blur-md rounded-xl p-4 border border-slate-700/50">
+          <h3 class="text-blue-400 font-semibold text-sm mb-2">Game Specifications</h3>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="flex items-center">
+              <span class="text-gray-400 mr-2"><i class="fas fa-microchip text-blue-400"></i></span>
+              <span>GPU: GTX 1060 or higher</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-gray-400 mr-2"><i class="fas fa-memory text-blue-400"></i></span>
+              <span>RAM: 8GB minimum</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-gray-400 mr-2"><i class="fas fa-hdd text-blue-400"></i></span>
+              <span>Storage: 15GB available</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-gray-400 mr-2"><i class="fas fa-window-maximize text-blue-400"></i></span>
+              <span>OS: Windows 10+</span>
+            </div>
           </div>
         </div>
+        <!-- Buttons - Perfectly aligned below developer cards -->
+        <div class="mt-4 flex flex-col md:flex-row items-center justify-center gap-3 p-2">
+          <a id="play-game" href="#" target="_blank" class="relative shimmer-btn text-[#1BFD9C] text-sm font-semibold px-5 py-2.5 rounded-lg border border-[#1BFD9C] 
+            bg-gradient-to-r from-green-900/20 to-transparent overflow-hidden transition-all duration-300 ease-in-out 
+            hover:text-white hover:shadow-[0_0_15px_#1BFD9C] hover:border-[#82ffc9] w-full md:w-auto text-center">
+            <i class="fas fa-gamepad mr-2"></i>Play Game
+          </a>
+
+          <a href="index.html" class="relative shimmer-btn text-[#3BA9FF] text-sm font-semibold px-5 py-2.5 rounded-lg border border-[#3BA9FF] 
+            bg-gradient-to-r from-blue-900/20 to-transparent overflow-hidden transition-all duration-300 ease-in-out 
+            hover:text-white hover:shadow-[0_0_15px_#3BA9FF] hover:border-[#82cfff] w-full md:w-auto text-center">
+            <i class="fas fa-home mr-2"></i>Back to Home
+          </a>
+        </div>
+
+
       </div>
-
-      <!-- Buttons -->
-      <div class="col-span-1 md:col-span-2 flex flex-col md:flex-row items-start justify-center md:space-x-4 md:space-y-0 p-4 gap-2">
-        <a id="play-game" href="#" target="_blank"
-           class="relative text-[#1BFD9C] text-sm font-semibold px-12 py-3 rounded-lg border-2 border-[#1BFD9C] 
-                  bg-transparent overflow-hidden transition-all duration-300 ease-in-out 
-                  before:absolute before:left-[-5em] before:w-10 before:h-full before:top-0 before:bg-gradient-to-r 
-                  before:from-transparent before:via-[#1BFD9C]/30 before:to-transparent before:transition-transform 
-                  before:duration-500 hover:text-[#82ffc9] hover:shadow-[0_0_15px_#1BFD9C] hover:border-[#82ffc9] 
-                  before:hover:translate-x-[15em]">
-            Play Game
-        </a>
-
-        <a href="index.html" 
-           class="relative px-8 py-2.5 text-white font-semibold rounded-lg border-2 border-blue-500 
-                  bg-transparent transition-all duration-300 
-                  before:absolute before:left-[-4em] before:w-4 before:h-full before:top-0 before:bg-gradient-to-r 
-                  before:from-transparent before:via-blue-500/20 before:to-transparent before:transition-transform 
-                  before:duration-500 hover:text-blue-300 hover:shadow-blue-500/50 hover:shadow-lg 
-                  before:hover:translate-x-[15em]">">
-            Back to Home
-        </a>
-      </div>
-
     </div>
   </div>
 
-  <script>
-    const games = [
-  { 
-    developerName: "Christian Ejay Clarino", 
-    coDeveloperName: "James Harold Antipuesto",
-    developerImg: "images/Profiles/EJ.jpg",  
-    coDeveloperImg: "images/Profiles/Harold.jpg",  
-    name: "The Adventure of Bobord", 
-    img: "images/The Adventure of Bobord.webp", 
-    developer: "Bobord Creations", 
-    link: "https://ej0077.github.io/Adventureofbobords/",
-    description: "In the heart of Cagayan de Oro, a fearless warrior named Boborj lived a peaceful life until one fateful night when his beloved Princess Liana was kidnapped by monstrous enemies. The creatures took her deep into the city, hiding her in a secret lair. Determined to save her, Boborj embarked on a dangerous journey across Cagayan de Oro, facing powerful foes and overcoming deadly challenges."
-  },
-  { 
-    developerName: "Mel Angelo S. Macario", 
-    coDeveloperName: "Grizon Russell B. Sacay", 
-    developerImg: "images/Profiles/Mel.jpeg",  
-    coDeveloperImg: "images/Profiles/Grizon.jpeg",  
-    name: "Ticket Rush", 
-    img: "images/Ticket Rush.jpg", 
-    developer: "Macario Sacay Studios", 
-    link: "https://kyusans.github.io/ticket-rush/",
-    description: "Race against time to collect as many tickets as possible while avoiding obstacles and mastering different levels in this fast-paced arcade game."
-  },
-  { 
-    developerName: "Vince Tillo", 
-    coDeveloperName: "Nathaniel Iroc", 
-    developerImg: "images/Profiles/Tillo.jpg",  
-    coDeveloperImg: "images/Profiles/Iroc.jpg",  
-    name: "Chronicles of Macahambus", 
-    img: "images/Chronicles of Macahambus.png", 
-    developer: "Epic Devs", 
-    link: "https://play.unity.com/en/games/799f11cb-3d1d-44d7-8ab0-0152634c2276/chronicles-of-macahambus-webversion",
-    description: "Step into the shoes of a warrior exploring the historic Macahambus caves, solving puzzles, and fighting mythical creatures in this story-rich adventure."
-  },
-  { 
-    developerName: "Kittim Ignalig", 
-    coDeveloperName: "Khendal Thur Calinawan", 
-    developerImg: "images/Profiles/Kittim.jpg",  
-    coDeveloperImg: "images/Profiles/Khendal.jpg",  
-    name: "Apokz", 
-    img: "images/Apokz.webp", 
-    developer: "Studio Alpha", 
-    link: "https://kittim1.github.io/IgnaligGame.github.io/",
-    description: "Journey to COC is an adventure-platformer that follows Apokz, a determined student on his way to PHINMA-COC. However, his journey is filled with obstacles and challenges that every student can relate to—rushing through traffic, avoiding distractions, overcoming mental blocks, and even dealing with unexpected school-related surprises."
-  },
-  { 
-    developerName: "Ralph Jan P. Gallegos", 
-    coDeveloperName: "Jake Roaya", 
-    developerImg: "images/Profiles/Gallegos.jpg",  
-    coDeveloperImg: "images/Profiles/Roaya.jpg",  
-    name: "Outbreak", 
-    img: "images/Outbreak.png", 
-    developer: "Biohazard Games", 
-    link: "https://chillingsss.github.io/outbreak/",
-    description: "Phinma Cagayan de Oro College is an RPG where you play as the sole survivor trapped inside the campus after a sudden zombie outbreak. With no allies and limited resources, you must navigate the school, scavenge supplies, and fight off the undead while searching for a way out. Every decision matters as you unlock new areas, solve challenges, and prepare to venture beyond the campus into the unknown real world. Will you escape and uncover the truth behind the outbreak, or will you become just another victim? Survive, adapt, and break free."
-  },
-  { 
-    developerName: "Francis Baron Uyguanco", 
-    coDeveloperName: "John Nathaniel Jaso", 
-    developerImg: "images/Profiles/Uyguangco.jpg",  
-    coDeveloperImg: "images/Profiles/Nathaniel.jpg",  
-    name: "Gravity Shift", 
-    img: "images/Gravity Shift.png", 
-    developer: "Gravity Labs", 
-    link: "https://francis385.itch.io/gravity-shift",
-    description: "Defy the laws of physics in this puzzle-platformer where you manipulate gravity to navigate treacherous environments and uncover hidden secrets."
-  },
-  { 
-    developerName: "Christian Mark S. Valle", 
-    coDeveloperName: "Krystyll Ira Andrei T. Plaza", 
-    developerImg: "images/Profiles/Christian.jpg",  
-    coDeveloperImg: "images/Profiles/Ira.jpg",  
-    name: "The Further", 
-    img: "images/The Further.png", 
-    developer: "Mystic Studios", 
-    link: "https://chnix21.github.io/TheFurther/",
-    description: "A spine-chilling horror game set in Phinma COC, where players must navigate haunted halls, evade The Red Man, and uncover dark secrets."
-  },
-  { 
-    developerName: "Josh Pagapong", 
-    coDeveloperName: "Melanie Abalde",
-    developerImg: "images/Profiles/Josh.jpeg",  
-    coDeveloperImg: "images/Profiles/mela.dev.jpg",  
-    name: "Into the Light", 
-    img: "images/Into the Light.png", 
-    developer: "Light Studios", 
-    link: "https://mellifluous-tanuki-157f64.netlify.app/",
-    description: "Solve puzzles and explore a world consumed by darkness as you search for the lost light in this atmospheric and emotional adventure game."
-  },
-  { 
-    developerName: "Giann Isidore Legaspi", 
-    coDeveloperName: "Hiedern Montejo",
-    developerImg: "images/Profiles/Gian.png",  
-    coDeveloperImg: "images/Profiles/Heidern.jpg",  
-    name: "Shattered Department", 
-    img: "images/Shattered Department.png",   
-    developer: "Broken Studios", 
-    link: "https://giannisidore.github.io/gamdev/",
-    description: "Investigate a mysterious abandoned department building and uncover the truth behind its dark past in this eerie mystery-horror game."
-  },
-  { 
-    developerName: "Chester Kyle A Santos", 
-    coDeveloperName: "Rudgel Tagaan",
-    developerImg: "images/Profiles/Chester.jpeg",  
-    coDeveloperImg: "images/Profiles/Rudgel.jpeg",  
-    name: "The Phinma Chronicles", 
-    img: "images/The Phinma Chronicles.webp", 
-    developer: "Phinma Interactive", 
-    link: "https://dragonme3.github.io/PhinmaChronicle/",
-    description: "An action-packed game set in Phinma COC, where players battle supernatural forces while discovering hidden truths about the school."
-  },
-  { 
-    developerName: "Laurenz Anches", 
-    coDeveloperName: "Clyde Parol", 
-    developerImg: "images/Profiles/Anches.jpeg",  
-    coDeveloperImg: "images/Profiles/Clyde.jpg",  
-    name: "SEROT", 
-    img: "images/SEROT.jpg", 
-    developer: "Orange Studios", 
-    link: "https://dodong2323.github.io/urban-runner/", 
-    description: "SEROT, a college student drowning in stress, finally crashes at his desk after days of sleepless nights working on his capstone project. But instead of rest, he wakes up in a distorted dream world where reality twists and his academic struggles take monstrous forms."
-  },
-  { 
-    developerName: "Jan Nichols N. Maristela", 
-    coDeveloperName: "Paul Andrew L. Nerona ", 
-    developerImg: "images/Profiles/Maristela.jpg",  
-    coDeveloperImg: "images/Profiles/Nerona.jpg",  
-    name: "Last Defender", 
-    img: "images/LastDefender.png", 
-    developer: "Orange Studios", 
-    link: "https://dodong2323.github.io/urban-runner/", 
-    description: "Rise of the Last Defender: A Story of a Student Hero is an action-adventure game set in a dystopian future, where players control Eliardo, a brave PHINMA COC student, who becomes humanity's last hope after a UFO crash lands on campus and unleashes an alien cyborg invasion. Armed with experimental weapons and armor, Eliardo battles through progressively difficult levels, solves intricate puzzles, and collects vital keys to uncover the truth behind the invasion."
-  },
-  { 
-    developerName: "David Josh C. Gabonada", 
-    coDeveloperName: "Christian S. Noynay", 
-    developerImg: "images/Profiles/Gabonada.jpg",  
-    coDeveloperImg: "images/Profiles/Noynay.png",  
-    name: "Urban Runner", 
-    img: "images/Urban Runner.png", 
-    developer: "City Sprint Games", 
-    link: "https://dodong2323.github.io/urban-runner/", 
-    description: "Run, jump, and slide your way through the city streets in this endless runner packed with high-speed action and challenges."
-  },
-  { 
-    developerName: "Van Morre Guangco", 
-    coDeveloperName: "Immari Leah B. Mayordomo",
-    developerImg: "images/Profiles/Van.jpeg",  
-    coDeveloperImg: "images/Profiles/Mayordomo.jpg",  
-    name: "Queen Street Slayer", 
-    img: "images/Queen Street Slayer.jpg", 
-    developer: "Urban Legends", 
-    link: "https://vanmorre.github.io/Streetslayer/",
-    description: "Urban Runner is a fast-paced 2D side-scrolling action game set in a vibrant city environment. Players control a young runner navigating bustling streets, collecting items, dodging obstacles, and overcoming challenges. With five progressively difficult stages, players must evade traffic cones and stray dogs while mastering quick reflexes and strategic jumps. Featuring smooth animations, simple yet engaging gameplay, and a dynamic urban theme, Urban Runner delivers an exciting and accessible experience for casual gamers."
-  },
-  { 
-    developerName: "Ivan Ky Versoza", 
-    coDeveloperName: "Bea Ysabel Lachica",
-    developerImg: "images/Profiles/Versoza.jpg",  
-    coDeveloperImg: "images/Profiles/Bea.jpg",  
-    name: "The Locked: A Journey Back Home", 
-    img: "images/The Locked.png", 
-    developer: "Locked Games", 
-    link: "https://thechaoticzero.itch.io/a-journey-through-time",
-    description: "A mind-bending time-travel adventure where you must solve puzzles and navigate different timelines to find your way back home."
-  }
-];
+  <!-- Font Awesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const gameName = urlParams.get("name");
-    const game = games.find((g) => g.name === gameName);
-
-    if (game) {
-      // Set game details
-      document.getElementById("game-title").textContent = game.name;
-      document.getElementById("game-image").src = game.img;
-      document.getElementById("game-image").alt = game.name;
-      document.getElementById("game-developer").textContent = `Developer: ${game.developer}`;
-      document.getElementById("game-description").textContent = game.description;
-
-      // Set developer details
-      document.getElementById("developer-name").textContent = game.developerName;
-      document.getElementById("co-developer-name").textContent = game.coDeveloperName;
-
-      document.getElementById("developer-name-profile").textContent = game.developerName;
-      document.getElementById("co-developer-name-profile").textContent = game.coDeveloperName;
-
-      // Assign profile images (with fallback to default)
-      document.getElementById("developer-pic").src = game.developerImg || "images/Profiles/default.jpg";
-      document.getElementById("developer-pic").alt = game.developerName;
-
-      document.getElementById("co-developer-pic").src = game.coDeveloperImg || "images/Profiles/default.jpg";
-      document.getElementById("co-developer-pic").alt = game.coDeveloperName;
-
-      // Show "Play Game" button if a link exists
-      const playButton = document.getElementById("play-game");
-      if (game.link) {
-        playButton.href = game.link;
-        playButton.classList.remove("hidden");
-      } else {
-        playButton.classList.add("hidden");
-      }
-    } else {
-      document.body.innerHTML = "<h1 class='text-center text-white text-2xl'>Game not found</h1>";
-    }
-  </script>
+  <!-- Your gameDetails.js -->
+  <script src="gameDetails.js"></script>
 </body>
+
 </html>

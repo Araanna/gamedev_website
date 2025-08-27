@@ -1,33 +1,39 @@
-/* Ensure the body and html take full height */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-  
-  /* Background container */
-  .fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-  
-  /* Main content */
-  .relative {
-    position: relative;
-    z-index: 10;
-  }
-  
-  /* Particles */
-  .particle {
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-    pointer-events: none;
-  }
-  
- 
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(87, 83, 217, 0.5);
+      border-radius: 3px;
+    }
+
+    /* Animation for buttons */
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .shimmer-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent);
+      animation: shimmer 2s infinite;
+    }
