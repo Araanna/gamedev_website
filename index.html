@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Dev Web</title>
+  <title>GamesDev Hub 2025</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/ghost.png">
+
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
@@ -16,7 +21,8 @@
   <div class="gradient"></div>
 
   <header class="fixed z-50 top-0 left-0 right-0 w-full">
-    <nav class="backdrop-blur-md bg-white/20 shadow-lg mx-auto my-5 w-[90%] sm:w-[95%] lg:w-[80%] max-w-6xl rounded-lg px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+    <nav
+      class="backdrop-blur-md bg-white/20 shadow-lg mx-auto my-5 w-[90%] sm:w-[95%] lg:w-[80%] max-w-6xl rounded-lg px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
       <span class="text-white font-semibold text-lg">GAME EXPO 2025</span>
     </nav>
   </header>
@@ -24,44 +30,58 @@
   <div class="centered-container pt-16">
     <div id="indicators-carousel" class="relative w-[90%] sm:w-[95%] lg:w-[80%] max-w-6xl mx-auto mt-20 mb-8">
       <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-          <div class="carousel-item absolute inset-0 transition-opacity opacity-100">
-              <img src="videos/1.png" class="w-full h-full object-cover" alt="Image 1">
-          </div>
-          <div class="carousel-item absolute inset-0 transition-opacity opacity-0">
-              <img src="videos/2.png" class="w-full h-full object-cover" alt="Image 2">
-          </div>
-          <div class="carousel-item absolute inset-0 transition-opacity opacity-0">
-              <img src="videos/3.png" class="w-full h-full object-cover" alt="Image 3">
-          </div>
-          <div class="carousel-item absolute inset-0 transition-opacity opacity-0">
-              <img src="videos/4.png" class="w-full h-full object-cover" alt="Image 4">
-          </div>
+        <div class="carousel-item absolute inset-0 transition-opacity opacity-100">
+          <img src="videos/1.png" class="w-full h-full object-cover" alt="Image 1">
+        </div>
+        <div class="carousel-item absolute inset-0 transition-opacity opacity-0">
+          <img src="videos/2.png" class="w-full h-full object-cover" alt="Image 2">
+        </div>
+        <div class="carousel-item absolute inset-0 transition-opacity opacity-0">
+          <img src="videos/3.png" class="w-full h-full object-cover" alt="Image 3">
+        </div>
+        <div class="carousel-item absolute inset-0 transition-opacity opacity-0">
+          <video autoplay muted loop playsinline class="w-full h-full object-cover">
+            <source src="videos/Van.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
       </div>
 
       <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-          <button class="indicator w-3 h-3 rounded-full bg-white" data-slide="0"></button>
-          <button class="indicator w-3 h-3 rounded-full bg-gray-400" data-slide="1"></button>
+        <button class="indicator w-3 h-3 rounded-full bg-white" data-slide="0"></button>
+        <button class="indicator w-3 h-3 rounded-full bg-gray-400" data-slide="1"></button>
       </div>
 
-      <button id="prev" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
-          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60">
-              <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-              </svg>
-          </span>
+      <button id="prev"
+        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60">
+          <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M5 1 1 5l4 4" />
+          </svg>
+        </span>
       </button>
-      <button id="next" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
-          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60">
-              <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-              </svg>
-          </span>
+      <button id="next"
+        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60">
+          <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m1 9 4-4-4-4" />
+          </svg>
+        </span>
       </button>
     </div>
 
     <main class="w-[90%] sm:w-[95%] lg:w-[80%] max-w-6xl mx-auto flex-grow">
       <h1 class="text-3xl text-white font-bold text-left my-5">Games</h1>
-      <div id="product-container" class="game-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-items-center"></div>
+      <div id="product-container"
+        class="game-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-items-center">
+      </div>
     </main>
   </div>
 
@@ -88,10 +108,10 @@
       { name: "Urban Runner", img: "images/Urban Runner.png" }
     ];
 
-const container = document.getElementById("product-container");
+    const container = document.getElementById("product-container");
 
-games.forEach(game => {
- const gameCard = `
+    games.forEach(game => {
+      const gameCard = `
 <a href="game.html?name=${encodeURIComponent(game.name)}" class="w-full ">
   <div class=" backdrop-blur-lg bg-slate-900/40 shadow-lg border border-slate-100/20 rounded-lg transition duration-300 hover:scale-105 hover:shadow-lg overflow-hidden">
     <div class="game-image-container rounded-t-lg">
@@ -106,8 +126,8 @@ games.forEach(game => {
 </a>
 `;
 
-  container.innerHTML += gameCard;
-});
+      container.innerHTML += gameCard;
+    });
 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -116,52 +136,53 @@ games.forEach(game => {
       let currentIndex = 0;
       let intervalTime = 3000; // 3 seconds
       let autoSlide = setInterval(nextSlide, intervalTime);
-  
+
       function updateCarousel() {
-          slides.forEach((slide, index) => {
-              slide.style.opacity = index === currentIndex ? "1" : "0";
-          });
-          indicators.forEach((indicator, index) => {
-              indicator.classList.toggle("bg-white", index === currentIndex);
-              indicator.classList.toggle("bg-gray-400", index !== currentIndex);
-          });
+        slides.forEach((slide, index) => {
+          slide.style.opacity = index === currentIndex ? "1" : "0";
+        });
+        indicators.forEach((indicator, index) => {
+          indicator.classList.toggle("bg-white", index === currentIndex);
+          indicator.classList.toggle("bg-gray-400", index !== currentIndex);
+        });
       }
-  
+
       function nextSlide() {
-          currentIndex = (currentIndex + 1) % slides.length;
-          updateCarousel();
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
       }
-  
+
       function prevSlide() {
-          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-          updateCarousel();
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
       }
-  
+
       document.getElementById("next").addEventListener("click", () => {
-          nextSlide();
-          resetAutoSlide();
+        nextSlide();
+        resetAutoSlide();
       });
-  
+
       document.getElementById("prev").addEventListener("click", () => {
-          prevSlide();
-          resetAutoSlide();
+        prevSlide();
+        resetAutoSlide();
       });
-  
+
       indicators.forEach((indicator, index) => {
-          indicator.addEventListener("click", () => {
-              currentIndex = index;
-              updateCarousel();
-              resetAutoSlide();
-          });
+        indicator.addEventListener("click", () => {
+          currentIndex = index;
+          updateCarousel();
+          resetAutoSlide();
+        });
       });
-  
+
       function resetAutoSlide() {
-          clearInterval(autoSlide);
-          autoSlide = setInterval(nextSlide, intervalTime);
+        clearInterval(autoSlide);
+        autoSlide = setInterval(nextSlide, intervalTime);
       }
-  
+
       updateCarousel();
-  });
+    });
   </script>
 </body>
+
 </html>
